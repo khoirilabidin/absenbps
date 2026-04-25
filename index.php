@@ -134,12 +134,13 @@
     <!-- Menu Beranda -->
     <!-- Menu Admin -->
         <?php if ($_SESSION["level"]=="Admin" or $_SESSION['level']=='admin'): ?>
-            <li><a href="index.php?page=mahasiswa" id="mahasiswa"><em class="fa fa-users">&nbsp;</em> Data Mahasiswa</a></li>
-            <li><a href="index.php?page=data_absensi" id="data_absensi"><em class="fa fa-calendar">&nbsp;</em> Data Absensi</a></li>
-            <li><a href="index.php?page=data_kegiatan" id="kegiatan"><em class="fa fa-book">&nbsp;</em> Data Kegiatan</a></li>
-            <li><a href="index.php?page=admin" id="admin"><em class="fa fa-user">&nbsp;</em> Administrator</a></li>
-            <li><a href="index.php?page=pengaturan" id="pengaturan"><em class="fa fa-gear">&nbsp;</em> Pengaturan</a></li>
-            <?php endif; ?>
+    <li><a href="index.php?page=mahasiswa" id="mahasiswa"><em class="fa fa-users">&nbsp;</em> Data Mahasiswa</a></li>
+    <li><a href="index.php?page=data_absensi" id="data_absensi"><em class="fa fa-calendar">&nbsp;</em> Data Absensi</a></li>
+    <li><a href="index.php?page=data_kegiatan" id="kegiatan"><em class="fa fa-book">&nbsp;</em> Data Kegiatan</a></li>
+    <li><a href="index.php?page=admin" id="admin"><em class="fa fa-user">&nbsp;</em> Administrator</a></li>
+    <li><a href="index.php?page=divisi" id="divisi"><em class="fa fa-building">&nbsp;</em> Data Divisi</a></li>
+    <li><a href="index.php?page=pengaturan" id="pengaturan"><em class="fa fa-gear">&nbsp;</em> Pengaturan</a></li>
+<?php endif; ?>
     <!-- Menu Admin -->
     <!-- Menu Mahasiswa -->
             <?php  if ($_SESSION["level"]=="Mahasiswa" or $_SESSION["level"]=="mahasiswa"): ?>
@@ -179,7 +180,16 @@
                     break;
                 case 'pengaturan':
                     include "apps/pengaturan/index.php";
-                    break;
+                    break; 
+                    case 'divisi':
+    include "apps/divisi/index.php";
+    break;
+    case 'tambah_divisi':
+    include "apps/divisi/tambah.php";
+    break;
+    case 'edit_divisi':
+    include "apps/divisi/edit.php";
+    break;
                 case 'absen':
                     include "apps/pengguna/absen.php";
                     break;
